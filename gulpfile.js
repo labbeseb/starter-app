@@ -22,11 +22,11 @@ var sourcemaps    = require('gulp-sourcemaps');
 var	plumber       = require('gulp-plumber');
 
 
-//init tyo reload brower
+//init reload brower
 var reload      = browserSync.reload;
 
 
-// Browser-sync task, only cares about compiled CSS
+// Set Browser-sync task, serve files into default nav
 gulp.task('browser-sync', function() {
     browserSync({
         port: 8080,
@@ -67,7 +67,6 @@ gulp.task('css', function() {
 
 //For js
 gulp.task('js', function() {
-  // Order By initi, filters, controllers...
   return gulp.src(['./src/js/app.js'])
   .pipe(plumber({
     errorHandler: notify.onError("Error: <%= error.message %>")
